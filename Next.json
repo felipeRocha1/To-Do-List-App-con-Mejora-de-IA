@@ -1,0 +1,2 @@
+npx create-next-app@latest todo-app
+cd todo-app
