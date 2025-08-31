@@ -1,0 +1,10 @@
+CREATE TABLE tasks (
+  id SERIAL PRIMARY KEY,
+  title TEXT NOT NULL,
+  enhanced_title TEXT,
+  is_complete BOOLEAN DEFAULT FALSE,
+  user_email TEXT NOT NULL,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT TIMEZONE('utc'::text, NOW())
+);
+
+CREATE INDEX idx_tasks_user_email ON tasks(user_email);
